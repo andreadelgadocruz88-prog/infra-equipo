@@ -42,3 +42,5 @@ flowchart TB
 | Docker Compose | Instalar cada servicio a mano en la VM | Despliegue reproducible con un solo archivo |
 | Volumen nombrado `datos-db` | Datos dentro del contenedor | Los datos sobreviven a reinicios y recreaciones |
 | Respaldo con cron y script Bash | Respaldo manual | Se ejecuta de forma automática y deja copias fechadas |
+
+![Diagrama de arquitectura](img/arquitectura.png)
