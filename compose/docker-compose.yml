@@ -9,6 +9,7 @@ services:
       - app
     networks:
       - red-app
+    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS http://localhost/ > /dev/null || exit 1"]
       interval: 30s
@@ -23,6 +24,7 @@ services:
       - db
     networks:
       - red-app
+    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider http://localhost:8080/ || exit 1"]
       interval: 30s
@@ -39,6 +41,7 @@ services:
       - datos-db:/var/lib/postgresql/data
     networks:
       - red-app
+    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 10s
@@ -56,6 +59,7 @@ services:
       - prometheus-datos:/prometheus
     networks:
       - red-monitoreo
+    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider http://localhost:9090/-/healthy || exit 1"]
       interval: 30s
@@ -70,6 +74,7 @@ services:
       - grafana-datos:/var/lib/grafana
     networks:
       - red-monitoreo
+    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider http://localhost:3000/api/health || exit 1"]
       interval: 30s
@@ -82,6 +87,7 @@ services:
       - "9100:9100"
     networks:
       - red-monitoreo
+    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider http://localhost:9100/metrics || exit 1"]
       interval: 30s
@@ -96,6 +102,7 @@ services:
       - kuma-datos:/app/data
     networks:
       - red-monitoreo
+    restart: unless-stopped
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
@@ -110,6 +117,7 @@ services:
       - /dev/disk/:/dev/disk:ro
     networks:
       - red-monitoreo
+    restart: unless-stopped
 
 networks:
   red-app:
