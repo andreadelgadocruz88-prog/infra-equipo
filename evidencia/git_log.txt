@@ -1,0 +1,117 @@
+8efe1b2 Actualiza script de exposición
+ scripts/exposicion.sh    | 1433 ++++++++++++++++++++++++++++++++++++++++++++++
+ scripts/exposicion_v1.sh |  719 +++++++++++++++++++++++
+ 2 files changed, 2152 insertions(+)
+eab13cd docs: exporta el dashboard Monitoreo plataforma
+ compose/monitoring/dashboard-monitoreo.json | 435 ++++++++++++++++++++++++++++
+ 1 file changed, 435 insertions(+)
+49753f9 docs: agrega reflexion de la semana 15
+ docs/reflexion-semana15.md | 46 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+e749e95 docs: registra D-04, puertos de Docker fuera de las reglas de UFW
+ docs/defectos.md | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+4a43888 docs: cierra D-01 con la prueba de reinicio de la VM
+ docs/defectos.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+7867c1b docs: agrega la semana 7 al indice y corrige la fila de la semana 12
+ README.md | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+69b9c5b docs: README con servicios, despliegue, pruebas, respaldo e indice de semanas
+ README.md | 85 +++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 75 insertions(+), 10 deletions(-)
+60d1283 feat: respaldo.sh incluye pg_dump de la base y hashes sha256
+ scripts/respaldo.sh | 24 ++++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+1b4794c docs: actualiza RNF1 con los puertos publicados del monitoreo
+ docs/requerimientos.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+0c1662d docs: registra los defectos D-01 a D-03 encontrados en la semana 15
+ docs/defectos.md | 39 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+a1c3ff6 test: agrega pruebas.sh con una prueba de humo por servicio
+ scripts/pruebas.sh | 53 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+d649a7e fix: agrega restart unless-stopped a todos los servicios tras reinicio de la VM
+ compose/docker-compose.yml | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+05032e9 feat: integra Prometheus, Grafana, Uptime Kuma y cAdvisor en el compose
+ .gitignore                        |  1 +
+ compose/docker-compose.yml        | 85 +++++++++++++++++++++++++++++++++++++++
+ compose/monitoring/alertas.yml    | 10 +++++
+ compose/monitoring/prometheus.yml | 21 ++++++++++
+ 4 files changed, 117 insertions(+)
+c4cc422 docs: actualiza estado del plan por etapas
+ docs/plan-etapas.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+85e5932 docs: agrega reflexión con pruebas de los RNF
+ docs/reflexion.md | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+f374ad1 Merge pull request #1 from andreadelgadocruz88-prog/feature/semana14-arquitectura
+852ee24 docs: actualiza README con documentación, diagrama y despliegue
+ README.md | 23 +++++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+a01e711 docs: agrega matriz de riesgos
+ docs/matriz-riesgos.md | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+1f4e127 docs: agrega plan de implementación por etapas
+ docs/plan-etapas.md | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+43809f2 docs: agrega diagrama PNG y archivo draw.io editable
+ docs/arquitectura.md         |   2 ++
+ docs/img/arquitectura.drawio |   1 +
+ docs/img/arquitectura.png    | Bin 0 -> 351380 bytes
+ 3 files changed, 3 insertions(+)
+1e06464 docs: agrega diagrama de arquitectura y decisiones de diseño
+ docs/arquitectura.md | 44 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+d225549 docs: corrige comando de verificación del RNF4
+ docs/requerimientos.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+836365c docs: ajusta horario del respaldo a las 2:00 p. m.
+ docs/requerimientos.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+e825ca4 docs: precisa RNF4 y agrega scripts/respaldo.sh
+ docs/requerimientos.md | 2 +-
+ scripts/respaldo.sh    | 7 +++++++
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+a618bce docs: agrega requerimientos funcionales y no funcionales
+ docs/requerimientos.md | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+dccf409 refactor: organiza el repo en compose, docs, scripts y backups
+ backups/.gitkeep                                 | 0
+ .env.example => compose/.env.example             | 0
+ docker-compose.yml => compose/docker-compose.yml | 0
+ nginx.conf => compose/nginx.conf                 | 0
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+327ceb7 Fusiona semana-09 en main
+7e3cac0 Agrega scripts de la semana 9: respaldo y estado del sistema
+ semana09/estado.py   | 31 +++++++++++++++++++++++++++++++
+ semana09/reporte.txt |  4 ++++
+ semana09/respaldo.sh |  7 +++++++
+ 3 files changed, 42 insertions(+)
+c70ee7e Fusiona fix-secretos en main
+c69adf9 Documenta uso de .env en el despliegue
+ README.md | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+42c655e Mueve credenciales a .env y agrega .gitignore
+ .env.example       | 3 +++
+ .gitignore         | 1 +
+ docker-compose.yml | 6 +++---
+ 3 files changed, 7 insertions(+), 3 deletions(-)
+c7dd3de Agrega nginx.conf que usa el servicio web
+ nginx.conf | 7 +++++++
+ 1 file changed, 7 insertions(+)
+9dfcf02 Fusiona feature-andrea en main
+4231762 Agrega seccion como desplegar
+ README.md | 7 +++++++
+ 1 file changed, 7 insertions(+)
+72dc4d8 Agrega descripcion y requisitos al README
+ README.md | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+1414788 Agrega docker-compose de la semana 7
+ docker-compose.yml | 37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+8e3f22b Initial commit
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
