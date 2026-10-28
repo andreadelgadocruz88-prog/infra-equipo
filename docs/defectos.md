@@ -7,6 +7,7 @@ Defectos encontrados durante la integración y las pruebas del proyecto, con su 
 | D-01 | Contenedores de monitoreo caídos tras reiniciar la VM | Alta | Corregido | d649a7e |
 | D-02 | Clave de Uptime Kuma en texto plano en prometheus.yml | Alta | Corregido | 05032e9 |
 | D-03 | Grafana sin volumen: dashboards y contraseña se perderían al recrear el contenedor | Media | Corregido | 05032e9 |
+| D-04 | Los puertos publicados por Docker no pasan por las reglas de UFW | Media | Abierto (riesgo aceptado) | - |
 
 ## D-01. Contenedores de monitoreo caídos tras reiniciar la VM
 
@@ -37,3 +38,12 @@ Defectos encontrados durante la integración y las pruebas del proyecto, con su 
 - **Impacto:** si Docker recreaba el contenedor, se perdían los dashboards y la contraseña.
 - **Corrección:** se respaldó `/var/lib/grafana` con `docker cp`, se agregó el volumen `grafana-datos` al compose y se restauró el respaldo en ese volumen (commit `05032e9`).
 - **Verificación:** los 4 dashboards, incluido Monitoreo plataforma, siguen en Grafana tras recrear el contenedor.
+
+## D-04. Los puertos publicados por Docker no pasan por UFW
+
+- **Fecha:** 2026-10-28
+- **Cómo se detectó:** `sudo ufw status verbose` no muestra reglas para los puertos 8080, 3000, 9090, 9100, 3001 y 8081, y aun así los servicios responden desde otro equipo de la red.
+- **Causa:** Docker publica los puertos con sus propias reglas de iptables, que se evalúan antes que las de UFW. UFW no restringe esos puertos.
+- **Impacto:** cualquier equipo de la red puede llegar a Prometheus, node-exporter y cAdvisor, que no piden autenticación. Grafana y Uptime Kuma sí piden usuario y contraseña.
+- **Mitigación posible:** publicar los puertos solo en localhost (por ejemplo `127.0.0.1:9090:9090`) o poner reglas en la cadena `DOCKER-USER`.
+- **Decisión:** riesgo aceptado en el laboratorio, que está en una red privada. No se modificó para no alterar la demostración. Queda como mejora futura.
