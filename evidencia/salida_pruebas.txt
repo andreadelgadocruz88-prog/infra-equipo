@@ -1,12 +1,12 @@
-[0;36m=== Pruebas de humo - proyecto integrador - 2026-10-28 18:31:33 ===[0m
-[0;32m[ OK    ][0m Nginx (web) [0;36m(HTTP 200)[0m
-[0;32m[ OK    ][0m Adminer (app) [0;36m(healthcheck: healthy)[0m
-[0;32m[ OK    ][0m PostgreSQL (db) [0;36m(pg_isready: accepting connections)[0m
-[0;32m[ OK    ][0m Prometheus [0;36m(HTTP 200)[0m
-[0;32m[ OK    ][0m Prometheus: objetivos [0;36m(4 de 4 en up)[0m
-[0;32m[ OK    ][0m Grafana [0;36m(HTTP 200)[0m
-[0;32m[ OK    ][0m node-exporter [0;36m(HTTP 200)[0m
-[0;32m[ OK    ][0m Uptime Kuma [0;36m(HTTP 302)[0m
-[0;32m[ OK    ][0m cAdvisor [0;36m(HTTP 307)[0m
+=== Pruebas de humo - proyecto integrador - 2026-10-28 18:39:30 ===
+[ OK ]    Nginx (web) (HTTP 200)
+[ OK ]    Adminer (app) (healthcheck: healthy)
+[ OK ]    PostgreSQL (db) (pg_isready: accepting connections)
+[ OK ]    Prometheus (HTTP 200)
+[ OK ]    Prometheus: objetivos (4 de 4 en up)
+[ OK ]    Grafana (HTTP 200)
+[ OK ]    node-exporter (HTTP 200)
+[ OK ]    Uptime Kuma (HTTP 302)
+[ OK ]    cAdvisor (HTTP 307)
 
-[0;32mRESULTADO: 9 de 9 pruebas aprobadas[0m
+RESULTADO: 9 de 9 pruebas aprobadas
