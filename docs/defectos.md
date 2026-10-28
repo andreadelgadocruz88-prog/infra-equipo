@@ -17,7 +17,7 @@ Defectos encontrados durante la integración y las pruebas del proyecto, con su 
 - **Corrección en caliente:** `docker update --restart unless-stopped` sobre los cuatro contenedores, comprobado con `docker inspect`.
 - **Corrección en el repositorio:** se agregó `restart: unless-stopped` a los 8 servicios de `compose/docker-compose.yml` (commit `d649a7e`).
 - **Verificación:** `docker compose ps` con los 8 servicios en `Up` y `healthy`, y `pruebas.sh` con 9 de 9 pruebas aprobadas.
-- **Pendiente:** repetir la prueba reiniciando la VM completa.
+- **Prueba de reinicio (2026-10-28):** tras reiniciar la VM, los 8 servicios volvieron solos en `Up` y `healthy`, sin ejecutar `docker compose up`, y `pruebas.sh` dio 9 de 9 pruebas aprobadas.
 
 ## D-02. Clave de Uptime Kuma en texto plano
 
