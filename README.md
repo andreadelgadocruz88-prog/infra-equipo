@@ -90,8 +90,11 @@ Nota: restaurar sobre tablas que ya existen genera errores o filas duplicadas; e
 ## Índice por semanas
 | Semana | Tema | Dónde está |
 |---|---|---|
+| 7 | Docker Compose inicial (Nginx, Adminer y PostgreSQL) | Rama feature-andrea, ya fusionada en main |
 | 9 | Automatización con scripts | semana09/ |
 | 11 | Monitoreo y observabilidad | compose/monitoring/ y los servicios de monitoreo del compose |
-| 12 | Seguridad, hardening y respaldo | scripts/respaldo.sh |
+| 12 | Seguridad, hardening y respaldo | Se realizó en el servidor; el respaldo con sha256 quedó en scripts/respaldo.sh |
 | 14 | Diseño de la arquitectura | docs/ y docs/img/ |
 | 15 | Implementación y pruebas | compose/, scripts/pruebas.sh y docs/defectos.md |
+
+Las ramas feature-andrea, fix-secretos, semana-09 y feature/semana14-arquitectura ya están fusionadas en main.
