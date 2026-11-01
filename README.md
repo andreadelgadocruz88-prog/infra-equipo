@@ -98,3 +98,20 @@ Nota: restaurar sobre tablas que ya existen genera errores o filas duplicadas; e
 | 15 | Implementación y pruebas | compose/, scripts/pruebas.sh y docs/defectos.md |
 
 Las ramas feature-andrea, fix-secretos, semana-09 y feature/semana14-arquitectura ya están fusionadas en main.
+
+## Demostración de la sustentación (semana 16)
+
+El script `scripts/demo.sh` recorre la plataforma en cuatro partes, leyendo los datos en vivo desde Docker, Git y Prometheus:
+
+1. Servicios y arquitectura: servicios, puertos, volúmenes, redes y reinicio automático.
+2. Pruebas de humo (`pruebas.sh`) y falla provocada.
+3. Alerta de monitoreo (regla `ServicioCaido`).
+4. Respaldo y restauración.
+
+Uso:
+
+    cd ~/infra-equipo
+    ./scripts/demo.sh            # menú
+    ./scripts/demo.sh todo       # recorrido completo con cronómetro
+    ./scripts/demo.sh preguntas  # evidencias para las preguntas del docente
+    ./scripts/demo.sh verificar  # revisión previa
